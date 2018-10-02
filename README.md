@@ -1,4 +1,4 @@
-# android_bootimg(待验证)
+# android_bootimg
 Andorid unpack/repack boot/rececovery.img for windows Thanks @liudongmiao @yyjdelete
 
 1.解包boot.img
@@ -31,15 +31,12 @@ D:\test>
 一般输出 文件名 为 cpiolist.txt 和 目录名为 initrd （注意当前目录不能存在这个目录名的文件夹）
 
 3.打包 ramdisk.gz
-
 命令： bootimg --repack-ramdisk 
 注意： 当前目录必须存在 cpiolist.txt 和 inirtd 目录 ,生成新的ramdisk文件，文件名为ramdisk.cpio.gz
 
-4.打包boot.img 
-
+4.打包boot.img
 命令： bootimg --repack-bootimg 
 特别注意的是 当前目录必须有kernel和ramdisk.cpio.gz ,另外 解包的时候 输出的参数 必须 输入回 打包命令里面
 
 格式应该为 bootimg --repack-bootimg base cmdline page_size padding_size
-
-bootimg --repack-bootimg 0x20200000 2048 2048
+如：bootimg --repack-bootimg 0x20200000 2048 2048
